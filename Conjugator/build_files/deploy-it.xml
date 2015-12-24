@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="full_app_name">Verb Cycle (Italiano)</string>
+    <string name="buyLevel1">Italian Verb Pack Trial</string>
+    <string name="buyLevel2">Italian Verb Pack Level 1</string>
+    <string name="buyLevel4">Italian Verb Pack Level 2</string>
+    <string name="buyLevel8">Italian Verb Pack Level 3</string>
+    <string name="buyItem1">com.ciardullo.conjugator.italian.0</string>
+    <string name="buyItem2">com.ciardullo.conjugator.italian.1</string>
+    <string name="buyItem4">com.ciardullo.conjugator.italian.2</string>
+    <string name="buyItem8">com.ciardullo.conjugator.italian.3</string>
+    <string name="io">io</string>
+    <string name="tu">tu</string>
+    <string name="lei">lei</string>
+    <string name="noi">noi</string>
+    <string name="voi">voi</string>
+    <string name="loro">loro</string>
+    <string name="moltoBene">Molto bene</string>
+    <string-array name="filterByNames">
+	    <item name="NO_FILTER">No filter</item>
+        <item name="ARE">ARE verbs</item>
+	    <item name="ERE">ERE verbs</item>
+	    <item name="IRE">IRE verbs</item>
+	    <item name="OTHER">Other</item>
+    </string-array>
+    <string-array name="formNames">
+	    <item name="IRREGULAR">Irregular verb</item>
+	    <item name="ARE">ARE verb</item>
+	    <item name="ERE">ERE verb</item>
+        <item name="IRE">IRE verb</item>
+    </string-array>
+</resources>

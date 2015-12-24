@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    
+    <com.ciardullo.conjugator.layout.VerbSpinner
+        android:id="@+id/listVerb"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/cycleVerb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cycle_blue" 
+        android:contentDescription="Cycle"/>
+</LinearLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    
+	<com.ciardullo.conjugator.layout.TenseSpinner
+        android:id="@+id/listTense"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content" />
+    
+    <ImageView
+        android:id="@+id/cycleTense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:src="@drawable/cycle_blue" 
+        android:contentDescription="Cycle" />
+</LinearLayout>
+
+	<ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dip" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:baselineAligned="false" >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center|center_vertical"
+            android:text="@string/io" />
+        
+        <com.ciardullo.conjugator.layout.ConjugatorEditText
+            android:id="@+id/editIo"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:nextFocusDown="@+id/editTu" 
+            android:singleLine="true" >
+
+        </com.ciardullo.conjugator.layout.ConjugatorEditText>
+
+        <ImageView
+            android:id="@+id/passFailIo"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/si"
+            android:visibility="invisible"
+            android:contentDescription="@string/io" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center|center_vertical"
+            android:text="@string/tu" />
+        
+        <com.ciardullo.conjugator.layout.ConjugatorEditText
+            android:id="@+id/editTu"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:ems="10"  
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/passFailTu"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/si"
+            android:visibility="invisible"
+            android:contentDescription="@string/tu" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center|center_vertical"
+            android:text="@string/lei" />
+        
+        <com.ciardullo.conjugator.layout.ConjugatorEditText
+            android:id="@+id/editLei"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:ems="10"  
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/passFailLei"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/si"
+            android:visibility="invisible"
+            android:contentDescription="@string/lei" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center|center_vertical"
+            android:text="@string/noi" />
+        
+        <com.ciardullo.conjugator.layout.ConjugatorEditText
+            android:id="@+id/editNoi"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:ems="10"  
+            android:singleLine="true" />
+        
+        <ImageView
+            android:id="@+id/passFailNoi"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/si"
+            android:visibility="invisible"
+            android:contentDescription="@string/noi" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center|center_vertical"
+            android:text="@string/voi" />
+        
+        <com.ciardullo.conjugator.layout.ConjugatorEditText
+            android:id="@+id/editVoi"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:ems="10"  
+            android:singleLine="true" />
+        
+        <ImageView
+            android:id="@+id/passFailVoi"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/si"
+            android:visibility="invisible"
+            android:contentDescription="@string/voi" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_gravity="center|center_vertical"
+            android:text="@string/loro" />
+
+        <com.ciardullo.conjugator.layout.ConjugatorEditText
+            android:id="@+id/editLoro"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:ems="10" 
+            android:nextFocusDown="@+id/editIo"  
+            android:singleLine="true" />
+        
+        <ImageView
+            android:id="@+id/passFailLoro"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/si"
+            android:visibility="invisible"
+            android:contentDescription="@string/loro" />
+
+    </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

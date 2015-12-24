@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory 
+        android:title="@string/settings"
+        android:key="filter_by">
+        
+        <ListPreference 
+            android:key="PREF_FILTER_BY"
+            android:summary="@string/labelFilterBy"
+            android:defaultValue="9" 
+            android:entries="@array/filterByNames"
+            android:entryValues="@array/filterByVals"
+        />
+
+        <ListPreference 
+            android:key="PREF_CYCLE_BY"
+            android:summary="@string/labelCycleBy"
+            android:defaultValue="0" 
+            android:entries="@array/cycleByNames"
+            android:entryValues="@array/cycleByVals"
+        />
+            
+    </PreferenceCategory>
+
+</PreferenceScreen>

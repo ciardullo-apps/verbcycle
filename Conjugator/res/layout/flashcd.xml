@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:orientation="vertical" >
+
+    <com.ciardullo.conjugator.layout.TouchLinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/flashLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:background="#FFFFFF"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/verbName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginLeft="25dp"
+                android:text="sample"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/tenseName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="right"
+                android:text="sample"
+                android:textColor="#000000"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#ff5555" />
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="#0096F5"
+            android:dividerHeight="1dp"
+            android:listSelector="@android:color/transparent" />
+    </com.ciardullo.conjugator.layout.TouchLinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="70dp"
+            android:clickable="true"
+            android:onClick="prevFlashCard"
+            android:text="@string/arrowLeft"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="80dp"
+            android:layout_toRightOf="@+id/textView1"
+            android:clickable="true"
+            android:onClick="nextFlashCard"
+            android:text="@string/arrowRight"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+</LinearLayout>
