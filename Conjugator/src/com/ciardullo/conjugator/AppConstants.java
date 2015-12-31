@@ -31,7 +31,5 @@ public interface AppConstants {
 
 	public static String DEFAULT_LANG_CD = "it";
 	public static String FRENCH_LANG_CD = "fr";
-	
-	// TODO Remove backup from conjugator
-//	public static final int MENU_ITEM_BACKUP = 2;
+	public static String PORTUGUES_LANG_CD = "pt";
 }

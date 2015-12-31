@@ -1,11 +1,5 @@
 package com.ciardullo.conjugator.listener;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteCursor;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-
 import com.ciardullo.conjugator.AppConstants.SpinnerType;
 import com.ciardullo.conjugator.R;
 import com.ciardullo.conjugator.activity.ConjugatorActivity;
@@ -14,6 +8,13 @@ import com.ciardullo.conjugator.layout.ConjugatorEditText;
 import com.ciardullo.conjugator.layout.ConjugatorSpinner;
 import com.ciardullo.conjugator.layout.TenseSpinner;
 import com.ciardullo.conjugator.layout.VerbSpinner;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteCursor;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 /**
  * Used by the Verb and Tense Spinners to update the list of conjugations
@@ -94,14 +95,13 @@ public class ConjugationOnItemSelectedListener
 				et.setEditTextId(editTextIds[n]);
 				et.setPassFailImgId(passFailImgIds[n]);
 				et.reset();
-//				et.unhide();
 				// Always set the focus to io when a Spinner changes
 				if(n == 0)
 					et.requestFocus();
 				n++;
 			} while(cursor.moveToNext() && n < 6);
 		} catch(Exception e) {
-//			Log.e(ConjugationOnItemSelectedListener.class.getName(), e.getMessage());
+			Log.e(ConjugationOnItemSelectedListener.class.getName(), e.getMessage());
 		} finally {
 			try {
 				if(dao != null)

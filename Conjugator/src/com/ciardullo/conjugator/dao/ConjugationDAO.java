@@ -22,9 +22,7 @@ public class ConjugationDAO extends AbstractDAO {
 	}
 	@Override
 	public Cursor getAllRows() {
-//		List<CommonVO> voList = new ArrayList<CommonVO>();
 		Cursor cursor = null;
-//		try {
 			cursor = dbHelper.getDatabase().query(
 					sqlStmt, 
 					allColumns, 
@@ -32,22 +30,6 @@ public class ConjugationDAO extends AbstractDAO {
 					getSelectionArgs(), 
 					null, null, "sp_id");
 
-//			cursor.moveToFirst();
-//			do {
-//				int theId = cursor.getInt(0);
-//				String theName = cursor.getString(1);
-//
-//				// Call the handy Factory method
-//				CommonVO commonVO = createVO(theId, theName);
-//				voList.add(commonVO);
-//			} while(cursor.moveToNext());
-//
-//		} finally {
-//			try {
-//				if(cursor != null) {
-//					cursor.close();
-//				}
-//			} catch(Exception e) {}
 		return cursor;
 	}
 

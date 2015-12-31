@@ -1,25 +1,7 @@
 package com.ciardullo.conjugator.activity;
 
+import java.io.IOException;
 import java.util.Deque;
-
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.net.Uri;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.SimpleCursorAdapter;
-import android.widget.TextView;
 
 import com.ciardullo.conjugator.AppConstants;
 import com.ciardullo.conjugator.R;
@@ -30,6 +12,26 @@ import com.ciardullo.conjugator.layout.VerbSpinner;
 import com.ciardullo.conjugator.listener.ConjugationOnItemSelectedListener;
 import com.ciardullo.conjugator.listener.HelpOnClickListener;
 import com.ciardullo.util.LayoutUtil;
+
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class ConjugatorActivity extends Activity implements AppConstants {
 	/** Called when the activity is first created. */
@@ -91,10 +93,6 @@ public class ConjugatorActivity extends Activity implements AppConstants {
 	private void populateSpinner(ConjugatorSpinner spinner) {
 		Cursor cursor = null;
 
-//		String[] items = new String[] { "One", "Two", "Three" };
-//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-//		android.R.layout.simple_spinner_item, tenses.toArray());
-
 		try {
 			cursor = spinner.loadLookups(this);
 			int[] to = new int[]{android.R.id.text1};
@@ -107,8 +105,8 @@ public class ConjugatorActivity extends Activity implements AppConstants {
 					to);
 			adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			spinner.setAdapter(adapter);
-		} catch (Exception e) {
-//			Log.e(ConjugatorActivity.class.getName(), e.getMessage());
+		} catch (IOException e) {
+			Log.e(ConjugatorActivity.class.getName(), e.getMessage());
 		} finally {
 			spinner.closeLookupDAO();
 		}
@@ -158,55 +156,6 @@ public class ConjugatorActivity extends Activity implements AppConstants {
 			startActivity(flashIntent);
 			b = true;
 			break;
-/*
-		case MENU_ITEM_BACKUP:
-		    String state = Environment.getExternalStorageState();
-	    	File externalStorageDir = Environment.getExternalStorageDirectory();
-		    if (Environment.MEDIA_MOUNTED.equals(state)) {
-		    	// Make sure a backup directory exists in external storage
-				String rootPath = externalStorageDir.getAbsolutePath();
-
-				File backupDir = new File(rootPath + "/ciardullo/backup");
-		    	String backupFileAbsolutePath = backupDir + "/" + DBConstants.DATABASE_NAME;
-				if(!backupDir.exists()) {
-					if(!backupDir.mkdirs()) {
-					}
-				}
-
-				// External storage state is available and writeable
-		    	File dbToBackup = new File(DBConstants.DATABASE_PATH + DBConstants.DATABASE_NAME);
-		    	try {
-					InputStream myInput = new FileInputStream(dbToBackup);
-					
-					OutputStream myOutput = null;
-					try {
-						myOutput = new FileOutputStream(backupFileAbsolutePath);
-
-						// transfer bytes from the inputfile to the outputfile
-						byte[] buffer = new byte[1024];
-						int length;
-						while ((length = myInput.read(buffer)) > 0) {
-							myOutput.write(buffer, 0, length);
-						}
-					} catch(IOException e) {
-						throw e;
-					} finally {
-						// Close the streams
-						if(myOutput != null) {
-							myOutput.flush();
-							myOutput.close();
-						}
-						if(myInput != null) {
-							myInput.close();
-						}
-					}
-
-		    	} catch(IOException e) {
-		    	}
-		    } else {
-		        // Can't backup
-		    }
-*/
 		}
 		return b;
 	}
@@ -362,7 +311,7 @@ public class ConjugatorActivity extends Activity implements AppConstants {
 			String t = packageName.substring(packageName.length()-2);
 			if("or".equals(t)) {
 				s = AppConstants.DEFAULT_LANG_CD;
-			} else if ("pt".equals(t)) {
+			} else if (AppConstants.PORTUGUES_LANG_CD.equals(t)) {
 				// If Portuguese, show French Vocabulent
 				s = AppConstants.FRENCH_LANG_CD;
 			} else {

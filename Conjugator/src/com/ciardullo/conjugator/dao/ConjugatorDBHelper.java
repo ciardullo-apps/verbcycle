@@ -10,6 +10,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class ConjugatorDBHelper extends SQLiteOpenHelper implements DBConstants {
 
@@ -24,11 +25,11 @@ public class ConjugatorDBHelper extends SQLiteOpenHelper implements DBConstants 
 	public void createDatabase() throws IOException {
 		boolean dbExist = checkDataBase();
 		if(!dbExist) {
-//			Log.i(ConjugatorDBHelper.class.getName(), "Creating database " + DATABASE_NAME);
+			Log.i(ConjugatorDBHelper.class.getName(), "Creating database " + DATABASE_NAME);
 			this.getReadableDatabase();
 			copyDatabase();
 		} else {
-//			Log.i(ConjugatorDBHelper.class.getName(), "Found existing database " + DATABASE_NAME);
+			Log.i(ConjugatorDBHelper.class.getName(), "Found existing database " + DATABASE_NAME);
 		}
 	}
 
@@ -40,8 +41,7 @@ public class ConjugatorDBHelper extends SQLiteOpenHelper implements DBConstants 
 
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-//		Log.i(ConjugatorDBHelper.class.getName(), "onUpgrade() called");
-//		db.execSQL(DROP_TBL_EXPRESSION_SQL);
+		Log.i(ConjugatorDBHelper.class.getName(), "onUpgrade() called");
 	}
 
 	/**

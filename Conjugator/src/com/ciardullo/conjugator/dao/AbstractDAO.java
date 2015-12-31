@@ -5,6 +5,7 @@ import java.io.IOException;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
+import android.util.Log;
 
 public abstract class AbstractDAO implements DBConstants {
 	protected ConjugatorDBHelper dbHelper;
@@ -23,14 +24,14 @@ public abstract class AbstractDAO implements DBConstants {
 		try {
 			dbHelper.createDatabase();
 		} catch(IOException e) {
-//			Log.e(LoadLookupTableDAO.class.getName(), e.getMessage());
+			Log.e(LoadLookupTableDAO.class.getName(), e.getMessage());
 			throw e;
 		}
 		
 		try {
 			dbHelper.openDatabase();
 		} catch(SQLException e) {
-//			Log.e(LoadLookupTableDAO.class.getName(), e.getMessage());
+			Log.e(LoadLookupTableDAO.class.getName(), e.getMessage());
 			throw e;
 		}
 	}

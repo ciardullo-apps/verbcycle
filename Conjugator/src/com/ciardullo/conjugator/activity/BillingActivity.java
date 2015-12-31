@@ -139,14 +139,7 @@ public class BillingActivity extends Activity implements OnClickListener,
 		public void onRequestPurchaseResponse(RequestPurchase request,
 				ResponseCode responseCode) {
 			if (responseCode == ResponseCode.RESULT_OK) {
-//				logProductActivity(request.mProductId,
-//						"sending purchase request");
-			} else if (responseCode == ResponseCode.RESULT_USER_CANCELED) {
-//				logProductActivity(request.mProductId,
-//						"dismissed purchase dialog");
-			} else {
-//				logProductActivity(request.mProductId,
-//						"request purchase returned " + responseCode);
+				;
 			}
 		}
 
@@ -197,7 +190,6 @@ public class BillingActivity extends Activity implements OnClickListener,
 					R.string.android_test_item_unavailable, Managed.UNMANAGED), };
 */
 
-	private String mItemName;
 	private String mSku;
 	private CatalogAdapter mCatalogAdapter;
 
@@ -452,7 +444,6 @@ public class BillingActivity extends Activity implements OnClickListener,
 	 */
 	public void onItemSelected(AdapterView<?> parent, View view, int position,
 			long id) {
-		mItemName = getString(CATALOG[position].nameId);
 		mSku = CATALOG[position].sku;
 	}
 

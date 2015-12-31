@@ -38,8 +38,6 @@ public class VerbSpinner extends ConjugatorSpinner {
 		LoadLookupTableDAO dao = new LoadVerbsDAO(context);
 
 		// Get verb filter preferences
-//		SharedPreferences prefs = context.getSharedPreferences(PREF_FILENM,
-//				Context.MODE_WORLD_READABLE);
 		SharedPreferences prefs = PreferenceManager
 				.getDefaultSharedPreferences(context);
 		String filterVerbsBy = prefs.getString(PREF_FILTER_BY,
